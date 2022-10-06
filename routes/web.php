@@ -78,12 +78,12 @@ Route::get('/user/delete/{id}', 'Admin\Profiles@delete')->name('user.delete');
 
 
 
-Route::get('/profiles', 'Admin\Profile@profile')->name('profiles');
-Route::post('/user_profiles', 'Admin\Profile@updateuser')->name('user_profiles.employe');
-Route::any('/users/indexd', 'Admin\Profile@index')->name('users.indexd');
-Route::get('/user/change_password', 'Admin\Profile@profile_pass')->name('user.change_password');
-Route::post('/user/edit_pro', 'Admin\Profile@edituser')->name('user.edit_pro');
-Route::post('/user/change_password/post', 'Admin\Profile@change_user')->name('user.change.password');
+Route::get('/profiles', 'App\Http\Controllers\Admin\Profile@profile')->name('profiles');
+Route::post('/user_profiles', 'App\Http\Controllers\Admin\Profile@updateuser')->name('user_profiles.employe');
+Route::any('/users/indexd', 'App\Http\Controllers\Admin\Profile@index')->name('users.indexd');
+Route::get('/user/change_password', 'App\Http\Controllers\Admin\Profile@profile_pass')->name('user.change_password');
+Route::post('/user/edit_pro', 'App\Http\Controllers\Admin\Profile@edituser')->name('user.edit_pro');
+Route::post('/user/change_password/post', 'App\Http\Controllers\Admin\Profile@change_user')->name('user.change.password');
 
 Route::get('usersc/{user}', 'Client_update@edit')->name('users.index');
 Route::post('usersc','Client_update@update')->name('users.index.update');
