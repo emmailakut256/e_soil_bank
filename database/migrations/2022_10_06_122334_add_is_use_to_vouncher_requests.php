@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('voucher_requests', function (Blueprint $table) {
-            //
+            $table->integer('is_used')->nullable()->default('0');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('voucher_requests', function (Blueprint $table) {
-            //
+            $table->dropColumn('is_used');
         });
     }
 };
