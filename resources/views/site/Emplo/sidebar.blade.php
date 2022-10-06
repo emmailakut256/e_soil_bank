@@ -33,7 +33,7 @@
           </li>
 
           <li class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-globe" aria-hidden="true"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;COPOUNS&nbsp;</span> </a>
+          <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; COPOUNS &nbsp;</span> </a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li>
                 <a class="dropdown-item" href=" {{route('site.Vouncher.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW COPOUN</a>
@@ -46,19 +46,21 @@
               </li>
             </ul>
           </li>
-    <li class="dropdown">
-      <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span class="app-menu__label">&nbsp;&nbsp;CLIENTS&nbsp;</span><i class="fa fa-caret-down"></i> </a>
-      <ul class="dropdown-menu settings-menu dropdown-menu-right">
-        <li>
-          <a class="dropdown-item" href=" {{route('site.Employees.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW CLIENTS</a>
-        </li>
-        <li>
-          <a class="dropdown-item" href=" {{route('site.Employees.create')}} "><i class="fa fa-shopping-bag fa-lg"></i> &nbsp;&nbsp;ADD CLIENTS</a>
-        </li>
-       
-       
-      </ul>
-    </li>
+
+
+          <li class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; CLIENTS &nbsp;</span> </a>
+            <ul class="dropdown-menu settings-menu dropdown-menu-right">
+              <li>
+                <a class="dropdown-item" href=" {{route('site.Employees.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW CLIENTS</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href=" {{route('site.Employees.create')}} "><i class="fa fa-shopping-bag fa-lg"></i> &nbsp;&nbsp;ADD CLIENTS</a>
+              </li>
+            
+            
+            </ul>
+          </li>
 
               <li>
                 <a class="app-menu__item {{ Route::currentRouteName() == 'site.Farmer.index' ? 'active' : '' }}" href="{{route('site.Farmer.index')}}">
@@ -68,33 +70,33 @@
               </li>
 
               <li class="dropdown">
-      <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;&nbsp;EMPLOYEES&nbsp;</span><i class="fa fa-caret-down"></i> </a>
-      <ul class="dropdown-menu settings-menu dropdown-menu-right">
-        <li>
-          <a class="dropdown-item" href=" {{route('site.Employees.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp;&nbsp; VIEW EMPLOYEES</a>
-        </li>
-        <li>
-          <a class="dropdown-item" href=" {{route('site.Employees.create')}} "><i class="fa fa-shopping-bag fa-lg"></i>&nbsp;&nbsp; ADD EMPLOYEES</a>
-        </li>
-       
-       
-      </ul>
-    </li>
+              <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; EMPLOYEES &nbsp;</span> </a>
+                <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                  <li>
+                    <a class="dropdown-item" href=" {{route('site.Employees.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp;&nbsp; VIEW EMPLOYEES</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href=" {{route('site.Employees.create')}} "><i class="fa fa-shopping-bag fa-lg"></i>&nbsp;&nbsp; ADD EMPLOYEES</a>
+                  </li>
+                
+                
+                </ul>
+              </li>
               
-              <li>
+              
                 <!-- <a class="app-menu__item {{ Route::currentRouteName() == 'site.settings' ? 'active' : '' }}" href="">
                   <i class="app-menu__icon fa fa-cogs"></i>
                   <span class="app-menu__label">LOGOUT</span>
                 </a> -->
-                <li class="dropdown">
-      <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;PROFILE&nbsp;</span><i class="fa fa-caret-down"></i> </a>
-      <ul class="dropdown-menu settings-menu dropdown-menu-right">
-        <li>
-          <a class="dropdown-item" href="{{url('/profiles')}}"><i class="fa fa-qrcode fa-lg"></i> &nbsp;&nbsp;EDIT PROFILE</a>
+        <li class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; PROFILE &nbsp;</span> </a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li>
+              <a class="dropdown-item" href="{{url('/profiles')}}"><i class="fa fa-qrcode fa-lg"></i> &nbsp;&nbsp;EDIT PROFILE</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{{route('user.change_password')}}"><i class="fa fa-shopping-bag fa-lg"></i>&nbsp;&nbsp; CHANGE PASSWORD</a>
         </li>
-        <li>
-          <a class="dropdown-item" href="{{route('user.change_password')}}"><i class="fa fa-shopping-bag fa-lg"></i>&nbsp;&nbsp; CHANGE PASSWORD</a>
-      </li>
         <!-- <li>
           <a class="dropdown-item" href=""><i class="fa fa-group fa-lg"></i> Team</a>
         </li>
