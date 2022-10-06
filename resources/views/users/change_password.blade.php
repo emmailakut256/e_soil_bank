@@ -55,7 +55,7 @@
                             @csrf
                            
                             <div class="form-group mb-2">
-                                <label class="form-control-label">Passoword: <span class="text-danger">*</span></label>
+                                <label class="form-control-label">Password: <span class="text-danger">*</span></label>
                                 <input class="form-control" type="password" name="password" placeholder="Password">
                             </div>
                             <div class="form-group mb-2">

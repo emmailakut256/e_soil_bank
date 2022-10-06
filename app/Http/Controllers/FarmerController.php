@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
-use DB;
+
 use App\Models\Land;
 class FarmerController extends Controller
 {
@@ -16,7 +17,7 @@ class FarmerController extends Controller
     public function index()
     {
         //
-        $employees = DB::table('land')->get();
+        $employees = DB::table('farmers')->get();
         // dd($employees);
         return view('site.Farmer.index', compact('employees'));
     }

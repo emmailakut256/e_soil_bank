@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\View;
+
+
 use App\Models\User;
 use App\Models\Copouns;
 use App\Models\Token;
 use App\Models\Voucher_request;
 use App\Http\Controllers\AppConstants;
 use App\Http\Controllers\CopounGenerator;
-use Response;
-use DB;
+
+
 use App\Notifications\Copoun;
 // use App\Mail\Copoun;
 use Notification;

@@ -17,55 +17,35 @@
   </div>
   
   <ul class="app-menu">
-    <li>
-      <a class="app-menu__item {{ Route::currentRouteName() == 'site.dashboard' ? 'active' : '' }}" href="/Dashboard">
-        <i class="app-menu__icon  fa fa-address-card-o"></i>
-        <span class="app-menu__label">&nbsp;&nbsp;DASHBOARD</span>
-      </a>
-    </li>
+          <li>
+            <a class="app-menu__item {{ Route::currentRouteName() == 'site.dashboard' ? 'active' : '' }}" href="/Dashboard">
+              <i class="app-menu__icon  fa fa-address-card-o"></i>
+              <span class="app-menu__label">&nbsp;&nbsp;DASHBOARD</span>
+            </a>
+          </li>
 
-  
-    <!-- <li> -->
-           <!--  <div class="app-menu__item" onclick="openAccordionsView('AccordionsView')">
-                    <i class="fa fa-eye fa-fw"></i> <span class="app-menu__label">Derive Metrics</span> 
-                  </div>
-              <div id="AccordionsView" class="w3-hide w3-white w3-card-4">
-                <a href="" class="w3-bar-item w3-button w3-padding "><i class="fa fa-users fa-fw"></i>  Project </a>
-                <a href="" class="w3-bar-item w3-button w3-padding  "><i class="fa fa-users fa-fw"></i>  Business </a>
-                <a href=" " class="w3-bar-item w3-button w3-padding   "><i class="fa fa-users fa-fw"></i>  Team </a>
-                <a href="" class="w3-bar-item w3-button w3-padding  "><i class="fa fa-users fa-fw"></i>  Product </a>
-                <a href="" class="w3-bar-item w3-button w3-padding "><i class="fa fa-users fa-fw"></i>  Resources </a> 
-
-              </div> -->
-              <!-- </li> -->
-              <li class="dropdown">
-            <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-globe" aria-hidden="true"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;SOIL SAMPLE&nbsp;</span><i class="fa fa-caret-down"></i> </a>
-            <ul class="dropdown-menu settings-menu dropdown-menu-right">
-              <li>
-                <a class="dropdown-item" href=" {{route('site.Land.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW SOIL SAMPLE</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href=" {{route('site.Land.create')}} "><i class="fa fa-shopping-bag fa-lg"></i> &nbsp;&nbsp;&nbsp; ADD SOIL SAMPLE</a>
-              </li>
-            
-            
+          <li class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-globe" aria-hidden="true"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;SOIL SAMPLE&nbsp;</span> </a>
+            <ul class="dropdown-menu settings-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href=" {{route('site.Land.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW SOIL SAMPLE</a></li>
+              <li><a class="dropdown-item" href=" {{route('site.Land.create')}} "><i class="fa fa-shopping-bag fa-lg"></i> &nbsp;&nbsp;&nbsp; ADD SOIL SAMPLE</a></li>
             </ul>
           </li>
 
-    <li class="dropdown">
-      <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;COPOUN&nbsp;</span><i class="fa fa-caret-down"></i> </a>
-      <ul class="dropdown-menu settings-menu dropdown-menu-right">
-      <li>
-          <a class="dropdown-item" href=" {{route('site.Vouncher.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW COPOUN</a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="{{route('site.Token.index')}}"><i class="fa fa-qrcode fa-lg"></i>&nbsp;&nbsp; COPOUN CATEGORY</a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="{{route('site.Vouncher.create')}}"><i class="fa fa-shopping-bag fa-lg"></i>&nbsp;&nbsp; GENERATE COPOUN</a>
-        </li>
-      </ul>
-    </li>
+          <li class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-globe" aria-hidden="true"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;COPOUNS&nbsp;</span> </a>
+            <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li>
+                <a class="dropdown-item" href=" {{route('site.Vouncher.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW COPOUN</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{route('site.Token.index')}}"><i class="fa fa-qrcode fa-lg"></i>&nbsp;&nbsp; COPOUN CATEGORY</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{route('site.Vouncher.create')}}"><i class="fa fa-shopping-bag fa-lg"></i>&nbsp;&nbsp; GENERATE COPOUN</a>
+              </li>
+            </ul>
+          </li>
     <li class="dropdown">
       <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span class="app-menu__label">&nbsp;&nbsp;CLIENTS&nbsp;</span><i class="fa fa-caret-down"></i> </a>
       <ul class="dropdown-menu settings-menu dropdown-menu-right">

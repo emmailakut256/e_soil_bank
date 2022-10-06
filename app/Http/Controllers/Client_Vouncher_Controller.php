@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Voucher_request;
 use App\Models\User;
 use App\Models\Copouns;
-use DB;
+use App\Models\Token;
+use Illuminate\Support\Facades\DB;
 use DateTime;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
@@ -53,8 +54,8 @@ class Client_Vouncher_Controller extends Controller
 
     public function stores(Request $request){
          $reque=$request->vouncher;
-        $employees_vouc = DB::select('select code from copoun where is_used=is_used',['is_used',"1"]);
-        $employees_vou = DB::select('select id from copoun where is_used=is_used',['is_used',"1"]);
+        $employees_vouc = DB::select('select code from copoun where is_used= "1" ');
+        $employees_vou = DB::select('select id from copoun where is_used= "1" ');
         $emp=json_decode(json_encode($employees_vouc,true));
         $empv=json_decode(json_encode($employees_vou,true));
         $nutr=new DateTime();

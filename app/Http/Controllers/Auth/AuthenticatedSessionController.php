@@ -48,9 +48,12 @@ class AuthenticatedSessionController extends Controller
             'password' => 'required',
         ]);
 
-        if (auth()->user()->Role==1) {
+        if (auth()->user()->Role==0) {
             return redirect()->route('Dashboard');
         } else {
+
+            // dd($request->email);
+            // return redirect()->route('site.Dashboard.Client_index');
 
             $employees_voucopo = DB::select('select * from copoun');
             foreach ($employees_voucopo as $values) {
@@ -70,13 +73,13 @@ class AuthenticatedSessionController extends Controller
                         return view('site.Purchase.index1', compact('employees','employees_voucs'));
                         // ->withEmployees_voucs($employees_voucs);
                     }else{
-                        return '/Client_based';
+                        return redirect()->route('site.Dashboard.Client_index');
                     }
                     
 
 
                 }else{
-                    return '/Client_based';
+                    return redirect()->route('site.Dashboard.Client_index');
                    
                 }
                 

@@ -22,6 +22,8 @@
                             <th> SOIL TEXTURE</th>
                             <th class="text-center"> LAND SIZE </th>
                             <!-- <th class="text-center"> Project Duration </th> -->
+
+                            <th class="text-center"> SOIL COLOR </th>
                                                         
                             <th class="text-center"> SIZE UNIT </th>
                             <th style="width:90px; min-width:90px;" class="text-center text-success">MANAGE</th>
@@ -33,9 +35,10 @@
                                   
                                     
                                     <td>{{ $employ->field_name }}</td>
-                                    <td>{{ $employ->Soil_type }}</td>
-                                    <td>{{ $employ->Soil_texture }}</td>
-                                    <td>{{ $employ->Land_size }}</td>
+                                    <td>{{ $employ->soil_type }}</td>
+                                    <td>{{ $employ->soil_texture }}</td>
+                                    <td>{{ $employ->land_size }}</td>
+                                    <td>{{ $employ->soil_color }}</td>
                                     <td>{{ $employ->field_unit }}</td>
                                     
                                   

@@ -35,7 +35,6 @@
                               
                               <option value="{{$employees->id}}">{{$employees->CATEGORY}}</option>
                             @endforeach
-                             
                             
 
                               </select>
@@ -49,6 +48,7 @@
                           </div>                      
                          
                             <br>
+                          
                             <div class="form-group">
                               <label class="control-label" for="price">VOUNCHER PRICE(UGX:) </label>
                               <input
@@ -57,7 +57,7 @@
                               placeholder="VOUNCHER PRICE (UGX:)"
                               id="price"
                               name="price"
-                              value=""
+                              value="{{$employees->PRICE}}"
                               readOnly
                               />
                               <div class="invalid-feedback active">
@@ -65,6 +65,7 @@
                               </div>
                             </div>
                           </div>
+                        
                          
                     <div class="tile-footer">
                     <div style='margin-left:200px;'>

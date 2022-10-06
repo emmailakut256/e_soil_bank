@@ -46,7 +46,7 @@
                         </span>
                         @enderror
                         </div>
-                        <p class="text-info text-center mt-4">{{auth()->user()->name}}</p>
+                        <p class="text-info text-center mt-4">{{Auth::user()->name}}</p>
                         <h3 class="text-primary text-center"><span class="badge badge-primary"></span></h3>
                     </div>
                 </div>

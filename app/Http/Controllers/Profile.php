@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\User;
 // use App\Models\Company;
 use App\Http\Controllers\BaseController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-use Auth;
-use Hash;
+
+
 
 class Profile extends BaseController
 {
