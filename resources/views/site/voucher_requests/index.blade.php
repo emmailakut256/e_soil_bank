@@ -1,14 +1,6 @@
 @extends('site.Employee')
-@section('title') CATEGORY @endsection
+@section('title') Employee @endsection
 @section('content')
-    <div class="app-title">
-        <div>
-            <h1><i class="fa fa-shopping-bag"></i> COPOUN</h1>
-            <p>SAVED COPOUN CATEGORY Details</p>
-        </div>
-        
-        <a href="{{ route('site.Token.create') }}" class="btn btn-primary pull-right">ADD TOKEN CATEGORY details</a>
-    </div>
     @include('admin.partials.flash')
     <div class="row">
         <div class="col-md-12">
@@ -18,30 +10,33 @@
                         <thead>
                         <tr>
                             <!-- <th> # </th> -->
-                            <th> CATEGORY NAME </th>
-                            <th class="text-center">PRICE SIZE </th>
-                            <th class="text-center"> PERIOD/DURATION </th>
+                            <th> USER ID </th>
+                            <th class="text-center">DATE WHEN CREATED </th>
+                            <th class="text-center"> PERIOD </th>
                             <!-- <th class="text-center"> Project Duration </th> -->
-                            <th> CREATED BY </th>
+                            <th> PRICE </th>
                             <th>REASON</th>
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i>Manage</th>
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($employees as $employ)
+                            @foreach($voucher_requests as $requests)
                                 <tr>
                                   
                                     
-                                    <td>{{ $employ->CATEGORY }}</td>
-                                    <td>{{ $employ->PRICE }}</td>
-                                    <td>{{ $employ->PERIOD }}</td>   
-                                    <td>ADMIN</td> 
-                                    <td>{{$employ->REASON}}</td>                                 
+                                    <td>{{ $requests->user_id }}</td>
+                                    <td>{{ $requests->created_date }}</td>
+                                    <td>{{ $requests->PERIOD }}</td>
+                                    <td>{{ $requests->price }}</td> 
+                                    <td>{{$requests->REASON}}</td>
+                                     
+                                    
+                                    
                                   
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
-                                            <a href="{{ route('site.Land.edit', $employ->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit">EDIT</i></a>
-                                            <!-- <a href="{{ route('site.Employees.edit', $employ->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
+                                            <a href="{{ route('site.voucher_requests.edit', $requests->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit">EDIT</i></a>
+                                            
                                         </div>
                                     </td>
                                 </tr>

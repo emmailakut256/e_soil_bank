@@ -25,7 +25,7 @@
           </li>
 
           <li class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-globe" aria-hidden="true"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;SOIL SAMPLE&nbsp;</span> </a>
+          <a class="btn btn-secondary dropdown-toggle" role="button" href="" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-globe" aria-hidden="true"></i> <span class="app-menu__label">&nbsp;&nbsp;&nbsp;SOIL SAMPLE&nbsp;</span> </a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href=" {{route('site.Land.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW SOIL SAMPLE</a></li>
               <li><a class="dropdown-item" href=" {{route('site.Land.create')}} "><i class="fa fa-shopping-bag fa-lg"></i> &nbsp;&nbsp;&nbsp; ADD SOIL SAMPLE</a></li>
@@ -33,7 +33,7 @@
           </li>
 
           <li class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; COPOUNS &nbsp;</span> </a>
+          <a class="btn btn-secondary dropdown-toggle" role="button" href="" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; COPOUNS &nbsp;</span> </a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li>
                 <a class="dropdown-item" href=" {{route('site.Vouncher.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW COPOUN</a>
@@ -49,7 +49,7 @@
 
 
           <li class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; CLIENTS &nbsp;</span> </a>
+          <a class="btn btn-secondary dropdown-toggle" role="button" href="" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; CLIENTS &nbsp;</span> </a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
               <li>
                 <a class="dropdown-item" href=" {{route('site.Employees.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp; VIEW CLIENTS</a>
@@ -70,7 +70,7 @@
               </li>
 
               <li class="dropdown">
-              <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; EMPLOYEES &nbsp;</span> </a>
+              <a class="btn btn-secondary dropdown-toggle" role="button" href=" " id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; EMPLOYEES &nbsp;</span> </a>
                 <ul class="dropdown-menu settings-menu dropdown-menu-right">
                   <li>
                     <a class="dropdown-item" href=" {{route('site.Employees.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp;&nbsp; VIEW EMPLOYEES</a>
@@ -82,6 +82,16 @@
                 
                 </ul>
               </li>
+
+
+              <li class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" role="button" href="" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; TOKEN REQUESTS &nbsp;</span> </a>
+                <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                  <li>
+                    <a class="dropdown-item" href=" {{route('site.voucher_requests.index')}} "><i class="fa fa-eye"></i>&nbsp;&nbsp;&nbsp; VIEW REQUESTS</a>
+                  </li>
+                </ul>
+              </li>
               
               
                 <!-- <a class="app-menu__item {{ Route::currentRouteName() == 'site.settings' ? 'active' : '' }}" href="">
@@ -89,25 +99,16 @@
                   <span class="app-menu__label">LOGOUT</span>
                 </a> -->
         <li class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" role="button" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; PROFILE &nbsp;</span> </a>
+          <a class="btn btn-secondary dropdown-toggle" role="button" href="" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-tachometer"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp; PROFILE &nbsp;</span> </a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li>
               <a class="dropdown-item" href="{{url('/profiles')}}"><i class="fa fa-qrcode fa-lg"></i> &nbsp;&nbsp;EDIT PROFILE</a>
             </li>
             <li>
               <a class="dropdown-item" href="{{route('user.change_password')}}"><i class="fa fa-shopping-bag fa-lg"></i>&nbsp;&nbsp; CHANGE PASSWORD</a>
+            </li>
+          </ul>
         </li>
-        <!-- <li>
-          <a class="dropdown-item" href=""><i class="fa fa-group fa-lg"></i> Team</a>
-        </li>
-        <li>
-          <a class="dropdown-item" href=""><i class="fa fa-cog fa-lg"></i> Product</a>
-        </li>
-        <li>
-          <a class="dropdown-item" href=""><i class="fa fa-globe fa-lg"></i> Resources</a>
-        </li> -->
-      </ul>
-    </li>
                 <a class="app-menu__item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fa fa-user fa-lg"></i>
@@ -118,4 +119,4 @@
                                         </form>
               </li>
             </ul>
-          </aside>
+</aside>

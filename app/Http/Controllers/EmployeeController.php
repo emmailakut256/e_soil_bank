@@ -7,7 +7,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Filesystem\Filesystem;
 use Redirect,Response,File;
-use DB;
+use Illuminate\Support\Facades\DB;
+use App\Models\Employee;
 
 class EmployeeController extends Controller
 {

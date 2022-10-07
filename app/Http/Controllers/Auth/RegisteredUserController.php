@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Mail;
+
+
 
 class RegisteredUserController extends Controller
 {
@@ -70,6 +73,11 @@ class RegisteredUserController extends Controller
                         'password' => Hash::make($request->password),
                     ]);
 
+                    // Mail::send('emails.successCreated', $user->toArray(),
+                    // function ($message){
+                    //     $message->to('duteti@mailinator.com', 'Duteti')->subject('Successful Registration');
+                    // });
+                    
                     event(new Registered($user));
                     return view('auth.login');
 

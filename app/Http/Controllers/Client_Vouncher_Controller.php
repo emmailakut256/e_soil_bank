@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Copouns;
 use App\Models\Token;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Notifications\Notifiable;
 use DateTime;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
@@ -139,6 +140,7 @@ class Client_Vouncher_Controller extends Controller
         $nutrients = new Voucher_request;
         $nutrients->PERIOD=$request->PERIODss .' '."Hour";
         $nutrients->price=$request->price;
+        $nutrients->REASON=$request->reason;
         $nutr=new DateTime();
         $nutrz=$nutr->format('Y-m-d');
         $nutrients->created_date=$nutrz;
@@ -155,8 +157,8 @@ class Client_Vouncher_Controller extends Controller
   
         $details = [
             'greeting' => 'Hi E-Soil Data Bank Admin',
-            'body' => 'copoun Request',
-            'thanks' => "$userss <br> $users <br> $use ,$usec <p>$user</p> humbly request for a copoun of $request->PERIODss hours ",
+            'body' => 'Copoun Request',
+            'thanks' => "$userss <br/> $users <br/> $use ,$usec <p>$user</p> humbly request for a copoun of $request->PERIODss hours ",
             'actionText' => "",
             'actionURL' => url('/create')
         ];
@@ -164,7 +166,7 @@ class Client_Vouncher_Controller extends Controller
         // dd($users,$details);
         // $user =   Notification::to("tamocmpoza@gmail.com")->send(new Copoun($details));
         // $user =   Notification::send(User::first(),new Copoun($details));
-        $user = \App\Models\User::find(1);
+        $user = User::find($employee);
         $user->notify(new \App\Notifications\TaskComplete($details));
 
         // dd($user,$details);

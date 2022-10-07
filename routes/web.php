@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\VoucherRequestsController;
 use App\Http\Controllers\Site\DashboardController;
 use App\Http\Controllers\Site\AccountController;
 use App\Http\Controllers\Site\Client_Vouncher_Controller;
-
+use App\Http\Controllers\VoucherRequestsController as ControllersVoucherRequestsController;
 use App\Notifications\TaskComplete;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -69,12 +70,12 @@ Route::view('/index', 'site.Purchase.extends.index4');
 Route::get('/change_password', 'App\Http\Controllers\Profile@profile_pass')->name('change_password');
 Route::post('/change_password/post', 'App\Http\Controllers\Profile@change_user')->name('change.password');
 
-Route::get('/profile', 'Admin\Profiles@profile')->name('profile');
-Route::post('/user_profile', 'Admin\Profiles@updateuser')->name('user_profile.employe');
-Route::any('/clients/index_cl', 'Admin\Profiles@index')->name('clients.index');
-Route::post('/clients/create_pro', 'Admin\Profiles@create')->name('clients.create_pro');
-Route::post('/user/edit_pro', 'Admin\Profiles@edituser')->name('user.edit_pro');
-Route::get('/user/delete/{id}', 'Admin\Profiles@delete')->name('user.delete');
+Route::get('/profile', 'App\Http\Controllers\Admin\Profiles@profile')->name('profile');
+Route::post('/user_profile', 'App\Http\Controllers\Admin\Profiles@updateuser')->name('user_profile.employe');
+Route::any('/clients/index_cl', 'App\Http\Controllers\Admin\Profiles@index')->name('clients.index');
+Route::post('/clients/create_pro', 'App\Http\Controllers\Admin\Profiles@create')->name('clients.create_pro');
+Route::post('/user/edit_pro', 'App\Http\Controllers\Admin\Profiles@edituser')->name('user.edit_pro');
+Route::get('/user/delete/{id}', 'App\Http\Controllers\Admin\Profiles@delete')->name('user.delete');
 
 
 
@@ -125,6 +126,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('login', [LoginController::class, 'redirectTo']);
 
 	Route::get('account/orders', 'Site\AccountController@getOrders')->name('account.orders');
+
+    Route::get('/voucher_requests', [VoucherRequestsController::class, 'index'])->name('site.voucher_requests.index');
+    Route::get('/voucher_requests/{id}/edit', [VoucherRequestsController::class, 'edit'])->name('site.voucher_requests.edit');
+    Route::post('/voucher_requests/update', [VoucherRequestsController::class, 'update'])->name('site.voucher_requests.update');
 
 	Route::group(['prefix'  =>   'EmployeeZ'], function() {
 

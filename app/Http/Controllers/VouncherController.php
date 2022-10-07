@@ -22,7 +22,7 @@ use App\Http\Controllers\CopounGenerator;
 
 use App\Notifications\Copoun;
 // use App\Mail\Copoun;
-use Notification;
+use Illuminate\Support\Facades\Notification;
 
 class VouncherController extends Controller{
 

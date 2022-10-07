@@ -17,6 +17,7 @@ class Voucher_request extends Model
          'price',
         'created_date',
         'user_id',
+        'REASON',
     ];
 
     public function land(){

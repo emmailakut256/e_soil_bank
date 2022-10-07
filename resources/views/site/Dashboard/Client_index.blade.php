@@ -45,7 +45,24 @@
                               @enderror
                               
                               
-                          </div>                      
+                          </div>
+
+                          <br>
+                          <div class="form-group">
+                              <label class="control-label" for="reason">REASON FOR REQUESTING VOUCHER </label>
+                              <input
+                              
+                              type="text area"
+                              placeholder="Enter your reason"
+                              id="reason"
+                              name="reason"
+                              value=""
+
+                              />
+                              
+                            </div>
+                          </div>
+
                          
                             <br>
                           
@@ -64,7 +81,9 @@
                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('price') <span>{{ $message }}</span> @enderror
                               </div>
                             </div>
-                          </div>
+                            </div>
+
+                            
                         
                          
                     <div class="tile-footer">
