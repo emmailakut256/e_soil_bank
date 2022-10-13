@@ -7,9 +7,8 @@ use App\Models\User;
 // use App\Models\Company;
 use App\Http\Controllers\BaseController;
 
-use Auth;
-use Hash;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 class Profile extends BaseController
 {
     /**

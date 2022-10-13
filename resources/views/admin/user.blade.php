@@ -117,7 +117,7 @@
                             </div> 
                             
                             <div class="form-layout-footer text-right mt-5">
-                                <button type="submit" class="btn btn-primary tx-20"><i class="fa fa-floppy-o mr-2"></i> UPDATE</button>
+                                <button type="submit" class="btn btn-primary tx-20"><i class="fa fa-floppy-o mr-2"></i> UPDATEs</button>
                             </div>
                         </form>
                     </div>

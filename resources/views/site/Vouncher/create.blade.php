@@ -7,7 +7,7 @@
 @section('content')
     <div class="app-title">
         <div>
-           <h1><i class="fa fa-briefcase"></i>Genereate new copoun Key</h1>
+           <h1><i class="fa fa-briefcase"></i>Generate new copoun Key</h1>
         </div>
          <!-- Success message -->
         @if(Session::has('success'))
@@ -41,7 +41,7 @@
                                 @foreach ($request as $course)
                                 @foreach($user as $courses_ids)
                                 @if($courses_ids->id == $course->user_id)
-                                {{ $courses_ids->name }}
+                                <option value="{{$courses_ids->name}}" selected> {{ $courses_ids->name }}</option>
                                 @endif
                                 @endforeach
                                 @endforeach
@@ -56,8 +56,8 @@
                             <option value="">Select period for copoun Key</option>
                            @foreach($usedLicenses as $employees)
                            
-                                                          -->
-                              <option value="{{$employees->PERIOD}}">{{$employees->CATEGORY}}</option>
+                                                          
+                              <option value="{{$employees->CATEGORY}}">{{$employees->CATEGORY}}</option>
                              
                             @endforeach
                         </select>

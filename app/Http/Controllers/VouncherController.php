@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
+
+
 
 
 use App\Models\User;
@@ -62,16 +65,18 @@ class VouncherController extends Controller{
 
     public function store(Request $request){
         $data = $request->all();
+        
         $user_id=$request->PERIODss;
+        
+
         $client_reques = DB::table('voucher_requests')->where(['is_used' =>1])->get();
         
         $rules = array(
            'license_period'=>'required'
         );
+        ;
         
         $validator = Validator::make($data, $rules);
-        
-       
         
         // $validator = $request->validate([$data, $rules]);
         

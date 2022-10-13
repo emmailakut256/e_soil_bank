@@ -38,7 +38,7 @@
                                         placeholder="Enter  farmer name"
                                         id="farmer_name"
                                         name="farmer_name"
-                                        value="{{ old('farmer_name', $employee->farmer_name) }}"
+                                        value="{{$employee->farmer_name) }}"
                                     />
                                     <input type="hidden" farmer_name="id" value="{{ $employee->id }}">
                                     <div class="invalid-feedback active">
@@ -55,7 +55,7 @@
                                                 placeholder="Enter  farmer email"
                                                 id="farmer_email"
                                                 name="farmer_email"
-                                                value="{{ old('farmer_email', $employee->farmer_email) }}"
+                                                value="{{ $employee->farmer_email) }}"
                                             />
                                             <div class="invalid-feedback active">
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('farmer_email') <span>{{ $message }}</span> @enderror
@@ -75,7 +75,7 @@
                                                 placeholder="Enter Employee farmer_address"
                                                 id="farmer_address"
                                                 name="farmer_address"
-                                                value="{{ old('farmer_address', $employee->farmer_address) }}"
+                                                value="{{$employee->farmer_address) }}"
                                             />
                                             <div class="invalid-feedback active">
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('farmer_address') <span>{{ $message }}</span> @enderror
@@ -95,7 +95,7 @@
                                                 placeholder="Enter Employee farmer_contact"
                                                 id="farmer_contact"
                                                 name="farmer_contact"
-                                                value="{{ old('farmer_contact', $employee->farmer_contact) }}"
+                                                value="{{$employee->farmer_contact)}}"
                                             />
                                             <div class="invalid-feedback active">
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('farmer_contact') <span>{{ $message }}</span> @enderror
@@ -109,7 +109,7 @@
                             <div class="tile-footer">
                                 <div class="row d-print-none mt-2">
                                     <div class="col-12 text-right">
-                                        <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Faemer</button>
+                                        <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Farmer</button>
                                         <a class="btn btn-danger" href="{{ route('site.Farmer.index') }}"><i class="fa fa-fw fa-lg fa-arrow-left"></i>Go Back</a>
                                     </div>
                                 </div>

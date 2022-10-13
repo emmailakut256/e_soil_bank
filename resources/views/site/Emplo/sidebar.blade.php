@@ -2,7 +2,7 @@
 <aside class="app-sidebar">
  <div class="w3-container w3-row">
   <div class="w3-col s12 w3-center">
-   <img class="w3-circle w3-margin-right" style="width:100px" src="{{ asset('frontend/images/avatar3.png') }}">
+   <img class="w3-circle w3-margin-right" style="width:100px" src="{{ Auth::user()->url }}">
  </div>
  <div class="w3-col s12 w3-bar w3-center">
    
