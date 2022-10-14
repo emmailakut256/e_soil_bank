@@ -66,16 +66,16 @@ class VouncherController extends Controller{
     public function store(Request $request){
         $data = $request->all();
         
-        $user_id=$request->PERIODss;
+        $user=$request->clients;
+        $user_id = User::where(['name' => $request->input('clients')])->first()->id;
         
-
-        $client_reques = DB::table('voucher_requests')->where(['is_used' =>1])->get();
+        // dd($user_id);
+        $client_request = DB::table('voucher_requests')->where(['is_used' =>1])->get();
         
         $rules = array(
            'license_period'=>'required'
         );
-        ;
-        
+
         $validator = Validator::make($data, $rules);
         
         // $validator = $request->validate([$data, $rules]);
@@ -85,6 +85,8 @@ class VouncherController extends Controller{
         }else{
             $serials = Copouns::where('is_used','!=',1)->get();
             $licensePeriod = $request->license_period;
+
+           
             if($licensePeriod == AppConstants::ONE_YEAR_LICENSE){
                 // $CD_key =  CopounGenerator::getOneYearLicense();
                 $tokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -112,32 +114,60 @@ class VouncherController extends Controller{
         $oneYearLicense = $oneYear.$key_period;
         // dd( $oneYearLicense); 
                 $this->storeCDKey($oneYearLicense,$licensePeriod,$user_id);
-                return Redirect::back()->with(['success'=>'Copoun is Generated Successfully ','serials'=>$serials]);
-            }elseif ($licensePeriod == AppConstants::TWO_YEAR_LICENSE ){
+                return Redirect::back()->with(['success'=>'Coupon is Generated Successfully']);
+            }elseif ($licensePeriod == AppConstants::TWO_YEAR_LICENSE){
                 $CD_key = CopounGenerator::getTwoYearLicense();
-
                 // dd( $CD_key);
-
-
                 $this->storeCDKey($CD_key,$licensePeriod,$user_id);
-                return Redirect::back()->with(['success'=>'Copoun is Generated Successfully','serials'=>$serials]);
+                return Redirect::back()->with(['success'=>'Coupon is Generated Successfully ']);
             }elseif ($licensePeriod == AppConstants::THREE_YEAR_LICENSE){
                 $CD_key =  CopounGenerator::getThreeYearLicense();
                 // dd( $CD_key);
                 $this->storeCDKey($CD_key,$licensePeriod,$user_id);
-                return Redirect::back()->with(['success'=>'Copoun is Generated Successfully','serials'=>$serials]);
+                return Redirect::back()->with(['success'=>'Coupon is Generated Successfully ']);
             }
 
         }
     }
 
     public function storeCDKey($CDkey, $periodOfLicense,$user_id){
-        $serial = new Copouns();
-        $serial->code = $CDkey;
-        $serial->period = $periodOfLicense;
-       
+        if ($periodOfLicense == AppConstants::ONE_YEAR_LICENSE){
+           $serial = new Copouns();
+           $serial->user_id = $user_id;
+           $serial->code = $CDkey;
+           $serial->period = $periodOfLicense;
+           $serial->total_days = $periodOfLicense;
+           $serial->expiry_date = date('Y-m-d', strtotime('+1 years'));
+           $serial->usage_start_date = date('Y-m-d');
+           $serial->save();
+        }
 
-        $employees = DB::table('users')->where(['id' => $user_id])->get();
+        if ($periodOfLicense == AppConstants::TWO_YEAR_LICENSE){
+            $serial = new Copouns();
+            $serial->user_id = $user_id;
+            $serial->code = $CDkey;
+            $serial->period = $periodOfLicense;
+            $serial->total_days = $periodOfLicense;
+            $serial->expiry_date = date('Y-m-d', strtotime('+2 years'));
+            $serial->usage_start_date = date('Y-m-d');
+            $serial->save();
+         }
+
+         if ($periodOfLicense == AppConstants::THREE_YEAR_LICENSE){
+            $serial = new Copouns();
+            $serial->user_id = $user_id;
+            $serial->code = $CDkey;
+            $serial->period = $periodOfLicense;
+            $serial->total_days = $periodOfLicense;
+            $serial->expiry_date = date('Y-m-d', strtotime('+3 years'));
+            $serial->usage_start_date = date('Y-m-d');
+           
+         }
+
+
+        $employees = User::where(['id' => $user_id])->get();
+        
+
 
         foreach( $employees as $employee){
             
@@ -157,11 +187,13 @@ class VouncherController extends Controller{
         // dd($details ,$email);
         // $user =   Notification::send($email,new Copoun($details));
         Notification::route('mail', $email)->notify(new Copoun($details));
-
+        
         $serial->save();
 
 
     }
+
+
 
 
 }

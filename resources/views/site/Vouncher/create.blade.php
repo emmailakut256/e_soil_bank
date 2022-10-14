@@ -3,11 +3,11 @@
 
 @endpush
 
-@section('title')GENERATE NEW COPOUN @endsection
+@section('title')GENERATE NEW COUPON @endsection
 @section('content')
     <div class="app-title">
         <div>
-           <h1><i class="fa fa-briefcase"></i>Generate new copoun Key</h1>
+           <h1><i class="fa fa-briefcase"></i>Generate new coupon Key</h1>
         </div>
          <!-- Success message -->
         @if(Session::has('success'))
@@ -15,6 +15,12 @@
                 {{Session::get('success')}}
             </div>
         @endif
+
+        @if(Session::has('error'))
+        <div class="alert alert-danger">
+            {{ Session::get('error') }}
+        </div>
+          @endif
     </div>
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -35,7 +41,7 @@
                     <div class="form-group">
                     <label>Select Client:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <div class="btn-group">                     
-                            <select id="PERIODss"  name="PERIODss" class ="form-control">
+                            <select id="clients"  name="clients" class ="form-control">
                                 <option value="">Select client name</option>
                                 
                                 @foreach ($request as $course)

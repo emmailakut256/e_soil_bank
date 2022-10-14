@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 
 class AppConstants extends Controller{
 
-    const ONE_YEAR_LICENSE                              = "1 Hour";
-    const TWO_YEAR_LICENSE                              = "2 Hour";
-    const THREE_YEAR_LICENSE                            = "3 Hour";
+    const ONE_YEAR_LICENSE                              = 1;
+    const TWO_YEAR_LICENSE                              = 2;
+    const THREE_YEAR_LICENSE                            = 3;
     const ONE_YEAR                                      = 365;
     const TWO_YEARS                                     = 730;
     const THREE_YEARS                                   = 1095;
