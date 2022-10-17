@@ -187,6 +187,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     });
     Route::get('usersc/{user}', 'Client_update@edit');
+    Route::get('findCategoryPrice', 'App\Http\Controllers\Client_Vouncher_Controller@CategoryPrice')->name('findCategoryPrice');
 
     Route::group(['prefix'  =>   'client_vouncher'], function() {
 

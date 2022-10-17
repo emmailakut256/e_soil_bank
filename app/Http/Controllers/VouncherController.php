@@ -159,7 +159,7 @@ class VouncherController extends Controller{
         Notification::route('mail', $email)->notify(new Copoun($details));
 
         $serial->save();
-
+        return Redirect::back()->with(['success'=>'Copoun is Generated Successfully','serials'=>$serials]);
 
     }
 

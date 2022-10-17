@@ -21,7 +21,7 @@
                                 </div>
                             </a>
                         </div>
-                        @guest
+                        
                         <div class="widget-header">
                                 <a href="{{ url('/') }}" class="ml-3 icontext">
                                     <div class="icon-wrap icon-xs bg-secondary round text-white"><i class="fa fa-home"></i></div>
@@ -46,31 +46,8 @@
                                     <div class="text-wrap" style="color: orange;"><span>About us </span></div>
                                 </a>
                             </div>
-                        @else
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                       <strong> {{ Auth::user()->name }}</strong> <span class="caret"></span>
-                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                       
-                                       @if(auth::user()->Role==1)
-                                       <a class="dropdown-item" href="usersc/{{auth::user()->id}}">profile</a>
-                                        @else
-                                        <a class="dropdown-item" href="users/{{auth::user()->id}}">profile</a>
-                                        @endif
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li> 
-                            </ul>
-                        @endguest
+                        
+                            
                     </div>
                 </div>
             </div>

@@ -53,6 +53,11 @@ class Client_Vouncher_Controller extends Controller
         return view('site.Dashboard.Client_index',compact('employees_vouc'));
     }
 
+    public function CategoryPrice(Request $request){
+        $data = Token::select('PRICE')->where('id',$request->id)->first();
+        return response()->json($data);
+    }
+
     public function stores(Request $request){
          $reque=$request->vouncher;
         $employees_vouc = DB::select('select code from copoun where is_used= "1" ');
@@ -139,7 +144,7 @@ class Client_Vouncher_Controller extends Controller
         $employee = Auth::id();        
         $nutrients = new Voucher_request;
         $nutrients->PERIOD=$request->PERIODss .' '."Hour";
-        $nutrients->price=$request->price;
+        $nutrients->price=$request->vouch_price;
         $nutrients->REASON=$request->reason;
         $nutr=new DateTime();
         $nutrz=$nutr->format('Y-m-d');

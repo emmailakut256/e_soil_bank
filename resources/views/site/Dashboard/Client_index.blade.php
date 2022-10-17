@@ -14,6 +14,7 @@
     @include('admin.partials.flash')
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
     <div class="row">
         <div class="col-md-9 mx-auto">
@@ -29,12 +30,12 @@
                           <div class="form-group">
                             
                             <label for="PERIOD">REQUEST FOR VOUNCHER:</label>
-                            <select  name="PERIODss" id="PERIODss" class="form-control @error('PERIOD') is-invalid @enderror">
+                            <select  name="PERIODss" id="PERIODss" class="PERIODss">
                               <option value="0">Select a copoun period</option>
                               @foreach($employees_vouc as $employees)
                               
                               <option value="{{$employees->id}}">{{$employees->CATEGORY}}</option>
-                            @endforeach
+                             @endforeach
                             
 
                               </select>
@@ -67,18 +68,15 @@
                             <br>
                           
                             <div class="form-group">
-                              <label class="control-label" for="price">VOUNCHER PRICE(UGX:) </label>
+                              <span>VOUCHER PRICE(UGX:) </span>
                               <input
-                              class="form-control @error('price') is-invalid @enderror"
-                              type="text"
-                              placeholder="VOUNCHER PRICE (UGX:)"
-                              id="price"
-                              name="price"
-                              value="{{$employees->PRICE}}"
-                              readOnly
-                              />
+                              name="vouch_price"
+                              id= "vouch_price"
+                              class="vouch_price"
+                              type="text"      
+                              readonly/>
                               <div class="invalid-feedback active">
-                                <i class="fa fa-exclamation-circle fa-fw"></i> @error('price') <span>{{ $message }}</span> @enderror
+                              <i class="fa fa-exclamation-circle fa-fw"></i> @error('price') <span>{{ $message }}</span> @enderror
                               </div>
                             </div>
                             </div>
@@ -100,26 +98,33 @@
     </div>
 
     <script type="text/javascript">
-                     
-        $("#PERIODss").select2({
-        placeholder: "Select a period",
-        allowClear: true
-        });
-                  
-                  
-          $("#PERIODss").on('select2:select',function(e){
-            selc = e.target.value;
-            console.log(selc);
-            $.get('/Client_baseds?selc=' + selc,function(data){
+        $(document).ready(function(){
+          $(document).on('change', '.PERIODss', function(){
+            // console.log('yeah that is it');
 
-            $.each(data,function(index, selected_price){
-              console.log(selected_price.PRICE);
+            var cat_id = $(this).val();
+            console.log(cat_id)
+            var a = $(this).parent().parent().parent();
+                       
+            $.ajax({
+              type: 'get',
+              url: "{{route('findCategoryPrice')}}",
+              data:{'id':cat_id},
+              dataType:'json',
+              success: function(data){
+                console.log(data.PRICE)
 
-            $("#price").val(selected_price.PRICE);
+                a.find('.vouch_price').val(data.PRICE);
+                
+                },
+              
+              error: function(){
 
- });
-});
-});
+              }
+            });
+          });
+        })  ;           
+        
 
   </script> 
                           
