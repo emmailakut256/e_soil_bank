@@ -20,9 +20,10 @@
                         <thead>
                         <tr>
                             <!-- <th> # </th> -->
-                            <th> FIELD NAME </th>
-                            <th class="text-center">LAND SIZE </th>
-                            <th class="text-center"> LOCATION CORDINATES </th>
+                            <th> SOIL TYPE </th>
+                            <th class="text-center">X CORDINATE LOCATION</th>
+                            <th class="text-center">Y CORDINATE LOCATION </th>
+                            <th class="text-center"> LOCATION DISTRICT </th>
                             <!-- <th class="text-center"> Project Duration </th> -->
                             <th> FARMER NAME </th>
                             
@@ -35,9 +36,10 @@
                                 <tr>
                                   
                                     
-                                    <td>{{ $employ->field_name }}</td>
-                                    <td>{{ $employ->Land_size }}</td>
-                                    <td>{{ $employ->land_location_cordinates }}</td>
+                                    <td>{{ $employ->Soil_type }}</td>
+                                    <td>{{ $employ->x_cordinate_lat }}</td>
+                                    <td>{{ $employ->y_cordinate_long }}</td>
+                                    <td>{{ $employ->land_location_district }}</td>
                                     <td>{{ $employ->farmer_name }}</td>
                                     <td>{{ $employ->farmer_contact }}</td>
                                     

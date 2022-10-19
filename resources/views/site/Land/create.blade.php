@@ -36,7 +36,7 @@
                         </div>
                         <!-- nutrients -->
                         <div class="form-group">
-                            <label class="control-label" for="Soil_phps">Soil PHP <span class="m-l-5 text-danger"> *</span></label>
+                            <label class="control-label" for="Soil_phps">Soil PH <span class="m-l-5 text-danger"> *</span></label>
                             <input min="6.00" max="7.20" class="form-control @error('Soil_phps') is-invalid @enderror" type="number" name="Soil_phps" id="Soil_phps" value="{{ old('Soil_phps') }}"/>
                             @error('Soil_phps') {{ $message }} @enderror
 
@@ -60,7 +60,7 @@
                             @error('Nitrogen') {{ $message }} @enderror
 
                             <input  class="form-control @error('Nitrogen') is-invalid @enderror" type="hidden" name="Nitrogens" id="Nitrogen" value='Nitrogen' value="{{ old('Nitrogen') }}"/>
-                            @error('Nitrogen') {{ $message }} @enderror
+                            @error('Nitrogen') {{ $mage }} @enderror
                         </div>
 
                         <div class="form-group">
@@ -70,6 +70,35 @@
 
                             <input class="form-control @error('Phosphorus') is-invalid @enderror" type="hidden" name="Phosphoruss" id="Phosphorus" value='Phosphorus' value="{{ old('Phosphorus') }}"/>
                             @error('Phosphorus') {{ $message }} @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="Soil Percentage">Soil Percentage  <span class="m-l-5 text-danger"> *</span></label>
+                            <input min="0" max="100" class="form-control @error('Soil Percentage') is-invalid @enderror" type="number" name="soil_percentage" id="soil_percentage" value="{{ old('Soil Percentage') }}"/>
+                            
+
+            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="Silt Percentage">Silt Percentage  <span class="m-l-5 text-danger"> *</span></label>
+                            <input min="0" max="100" class="form-control @error('Silt Percentage') is-invalid @enderror" type="number" name="silt_percentage" id="silt_percentage" value="{{ old('Silt Percentage') }}"/>
+                            
+
+    
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="Clay Percentage">Clay Percentage  <span class="m-l-5 text-danger"> *</span></label>
+                            <input min="0" max="100" class="form-control @error('Clay Percentage') is-invalid @enderror" type="number" name="clay_percentage" id="clay_percentage" value="{{ old('Clay Percentage') }}"/>
+                            
+
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="Soil Moisture">Soil Moisture  <span class="m-l-5 text-danger"> *</span></label>
+                            <input class="form-control @error('Soil Moisture') is-invalid @enderror" type="number" name="soil_moisture" id="soil_moisture" value="{{ old('Soil Moisture') }}"/>
                         </div>
 
                         <div class="form-group">
@@ -111,8 +140,20 @@
                             @error('field_unit') {{ $message }} @enderror
                         </div>
                         <div class="form-group">
-                        <label class="control-label">land location cordinates</label>
-                            <input class="form-control @error('land_location_cordinates') is-invalid @enderror" type="text" id="land_location_cordinates" name="land_location_cordinates"/>
+                        <label class="control-label">land location District</label>
+                            <input class="form-control @error('land_location_cordinates') is-invalid @enderror" type="text" id="land_location_district" name="land_location_district"/>
+                            @error('land_location_cordinates') {{ $message }} @enderror
+                        </div>
+
+                        <div class="form-group">
+                        <label class="control-label">X Cordinate Latitude</label>
+                            <input class="form-control @error('land_location_cordinates') is-invalid @enderror" type="text" id="x_cordinate_lat" name="x_cordinate_lat"/>
+                            @error('land_location_cordinates') {{ $message }} @enderror
+                        </div>
+
+                        <div class="form-group">
+                        <label class="control-label">Y Cordinate Longitude</label>
+                            <input class="form-control @error('land_location_cordinates') is-invalid @enderror" type="text" id="y_cordinate_long" name="y_cordinate_long"/>
                             @error('land_location_cordinates') {{ $message }} @enderror
                         </div>
 
